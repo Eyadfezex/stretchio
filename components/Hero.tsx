@@ -12,16 +12,16 @@ const Hero = () => {
       <Image
         src={element}
         alt="shape"
-        className="absolute top-[10%] md:-left-4 w-[400px] md:w-[500px] lg:w-[600px] "
+        className="absolute top-[10%] md:-left-4 w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]"
       />
       <div className="flex justify-center relative pt-10">
-        <div className="flex flex-col md:flex-row gap-5 items-center lg:justify-center md:items-start lg:items-center w-full px-4 md:w-[95%] lg:w-[90%]">
+        <div className="flex flex-col md:flex-row gap-5 items-center lg:justify-between md:items-start lg:items-center w-full px-4 md:w-[95%] lg:w-[90%] max-w-[1920px]">
           <div className="flex flex-col gap-7 md:w-[80%] lg:max-w-[500px]">
             <div>
-              <h1 className="text-4xl gradient_text  font-semibold">
+              <h1 className="text-4xl gradient_text  font-semibold lg:text-6xl">
                 Title Copy Goes Here Be Awesome
               </h1>
-              <p className="leading-4 mt-4">
+              <p className="leading-4 mt-4 lg:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse varius enim in eros elementum tristique. Duis
                 cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
@@ -45,7 +45,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relative w-full h-[20rem] md:h-full  rounded-2xl overflow-hidden lg:h-[35rem] lg:max-w-[500px]">
+          <div className="relative w-full h-[20rem] xl:h-[40rem] md:h-full  rounded-2xl overflow-hidden lg:h-[35rem] xl:max-w-[700px] lg:max-w-[500px]">
             <Image
               src="https://i.ibb.co/1LjWXkv/image-2024-11-28-062619874.webp"
               alt="image-fx"

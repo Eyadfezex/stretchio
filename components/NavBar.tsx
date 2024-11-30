@@ -15,7 +15,7 @@ const NavBar = () => {
         transition={{ type: "tween", ease: "circInOut", duration: 0.5 }}
         className="absolute p-4 bg-white top-[5.5rem] z-10 lg:hidden"
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 ">
           <Link href="#">Contacts</Link>
           <Link href="#">Features</Link>
           <Link href="#">About</Link>
@@ -39,7 +39,7 @@ const NavBar = () => {
         </div>
       </motion.div>
       <nav className="flex justify-center py-5 lg:py-9 relative z-10 bg-background">
-        <div className="flex items-center justify-between px-[16px] w-full md:w-[95%] lg:w-[90%]">
+        <div className="flex items-center justify-between px-[16px] w-full md:w-[95%] lg:w-[90%] max-w-[1920px]">
           <Link
             href="#"
             className="text-2xl lg:text-4xl text-primary font-bold font-poppins"
@@ -49,7 +49,7 @@ const NavBar = () => {
           <div className="lg:hidden">
             <Hamburger onToggle={() => setToggle(!toggle)} />
           </div>
-          <div className="lg:flex items-center gap-3 text-dark hidden">
+          <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-dark hidden">
             <Link href="#">Contacts</Link>
             <Link href="#">Features</Link>
             <Link href="#">About</Link>

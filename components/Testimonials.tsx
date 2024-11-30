@@ -10,25 +10,25 @@ const Testimonials = () => {
           <h2 className="gradient_text font-bold text-2xl md:text-3xl">
             What early testers are saying
           </h2>
-          <div className="h-[15rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+          <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
               items={testimonials1}
               direction="right"
-              speed="slow"
+              speed="normal"
             />
           </div>
-          <div className="h-[15rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+          <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
               items={testimonials2}
               direction="left"
-              speed="slow"
+              speed="normal"
             />
           </div>
-          <div className="h-[15rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+          <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
               items={Testimonials3}
               direction="right"
-              speed="slow"
+              speed="normal"
             />
           </div>
         </div>
