@@ -9,19 +9,16 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="relative">
-      <Image src={element} alt="shape" className="absolute top-[60%]" />
-      <div className="flex justify-center relative">
-        <div className="flex flex-col gap-2 items-center w-full">
-          <Image
-            src="https://i.ibb.co/1LjWXkv/image-2024-11-28-062619874.webp"
-            alt="image-fx"
-            width={2000}
-            height={2000}
-            className="w-full"
-          />
-          <div className="flex flex-col gap-7 px-4">
+      <Image
+        src={element}
+        alt="shape"
+        className="absolute top-[10%] md:-left-4 w-[400px] md:w-[500px] lg:w-[600px] "
+      />
+      <div className="flex justify-center relative pt-10">
+        <div className="flex flex-col md:flex-row gap-5 items-center lg:justify-center md:items-start lg:items-center w-full px-4 md:w-[95%] lg:w-[90%]">
+          <div className="flex flex-col gap-7 md:w-[80%] lg:max-w-[500px]">
             <div>
-              <h1 className="text-4xl hh_gradient text-transparent bg-clip-text font-semibold">
+              <h1 className="text-4xl gradient_text  font-semibold">
                 Title Copy Goes Here Be Awesome
               </h1>
               <p className="leading-4 mt-4">
@@ -47,6 +44,15 @@ const Hero = () => {
                 <IoIosArrowForward />
               </Button>
             </div>
+          </div>
+          <div className="relative w-full h-[20rem] md:h-full  rounded-2xl overflow-hidden lg:h-[35rem] lg:max-w-[500px]">
+            <Image
+              src="https://i.ibb.co/1LjWXkv/image-2024-11-28-062619874.webp"
+              alt="image-fx"
+              width={2000}
+              height={2000}
+              className="absolute w-full h-full object-cover object-top"
+            />
           </div>
         </div>
       </div>
