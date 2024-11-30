@@ -45,7 +45,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relative w-full h-[20rem] xl:h-[40rem] md:h-full  rounded-2xl overflow-hidden lg:h-[35rem] xl:max-w-[700px] lg:max-w-[500px]">
+          <div className="relative w-full h-[20rem] xl:h-[40rem] md:h-full   rounded-2xl overflow-hidden lg:h-[35rem] xl:max-w-[700px] lg:max-w-[500px]">
             <Image
               src="https://i.ibb.co/1LjWXkv/image-2024-11-28-062619874.webp"
               alt="image-fx"
