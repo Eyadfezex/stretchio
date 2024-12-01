@@ -88,7 +88,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
       >
         {items.map((item, i) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border-2 divide divide-y-2 md:w-[450px] max-h-[300px]"
+            className="w-[300px] max-w-full relative rounded-2xl border-2 divide divide-y-2 md:w-[450px] max-h-[300px]"
             style={{
               background:
                 "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
@@ -100,11 +100,11 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
               <span className="font-bold text-lg">Customer Quote</span>
             </div>
 
-            <div className="px-4 py-4 flex flex-col justify-between min-h-[200px]">
+            <div className="px-4 py-4 flex flex-col justify-between h-[150px] min-h-[200px]">
               <span className="  text-sm leading-[1.6] font-normal">
                 {item.quote}
               </span>
-              <div className=" flex flex-row items-center">
+              <div className="flex flex-row items-center">
                 <span className="flex flex-col gap-1">
                   <span className="text-sm leading-[1.6] font-normal">
                     {item.name}
