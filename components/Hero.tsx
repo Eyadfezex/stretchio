@@ -44,6 +44,7 @@ const Hero = () => {
         "template_ighkig8", // Replace with your EmailJS Template ID
         {
           user_email: email, // Match the template field
+          user_message: `A new user with the email ${email} wants to be notified!`, // Example custom message
         },
         "SA-bRx_g9vm1yU7U-" // Replace with your EmailJS User ID
       )
