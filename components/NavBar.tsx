@@ -22,16 +22,16 @@ const NavBar = () => {
           <div className="w-full flex justify-center">
             <motion.div
               initial={{ x: -250 }}
-              animate={
-                toggle ? { x: 0, rotate: 180 } : { x: -250, rotate: -180 }
-              }
+              animate={toggle ? { x: 0 } : { x: -250 }}
               transition={{
                 ease: "backOut",
                 duration: 1.5,
                 delay: 0.3,
               }}
-              className="w-12 h-12 rounded-full tr_gradient"
-            />
+              className=" text-2xl lg:text-4xl text-primary font-bold font-poppins"
+            >
+              Stretchio
+            </motion.div>
           </div>
           <span className="w-full text-center text-xs">
             Copyright © {year} Sretchio
