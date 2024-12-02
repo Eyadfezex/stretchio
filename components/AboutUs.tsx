@@ -21,10 +21,12 @@ const AboutUs = () => {
               About us
             </h2>
             <p className="text-lg md:text-xl lg:text-lg xl:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos.
+              Stretchio is more than an app; it’s a lifestyle designed for busy
+              professionals. Our mission is to integrate wellness seamlessly
+              into your workday, ensuring happier, healthier, and more
+              productive teams. Whether you're at a desk all day or managing a
+              hybrid schedule, Stretchio provides the tools you need to stay
+              active, focused, and pain-free.
             </p>
           </div>
         </div>
