@@ -14,6 +14,7 @@ const AboutUs = () => {
               height={5000}
               className="absolute w-full h-full object-cover"
               priority
+              loading="lazy"
             />
           </div>
           <div className="lg:w-[80%] lg:max-w-[400px]">
@@ -21,12 +22,12 @@ const AboutUs = () => {
               About us
             </h2>
             <p className="text-lg md:text-xl lg:text-lg xl:text-xl">
-              Stretchio is more than an app; it’s a lifestyle designed for busy
-              professionals. Our mission is to integrate wellness seamlessly
-              into your workday, ensuring happier, healthier, and more
-              productive teams. Whether you're at a desk all day or managing a
-              hybrid schedule, Stretchio provides the tools you need to stay
-              active, focused, and pain-free.
+              Stretchio is more than an app; it&apos;s a lifestyle designed for
+              busy professionals. Our mission is to integrate wellness
+              seamlessly into your workday, ensuring happier, healthier, and
+              more productive teams. Whether you&apos;re at a desk all day or
+              managing a hybrid schedule, Stretchio provides the tools you need
+              to stay active, focused, and pain-free.
             </p>
           </div>
         </div>

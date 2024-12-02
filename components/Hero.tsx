@@ -48,7 +48,7 @@ const Hero = () => {
         "SA-bRx_g9vm1yU7U-" // Replace with your EmailJS User ID
       )
       .then(
-        (result) => {
+        () => {
           setLoading(false);
           setEmail(""); // Clear the input
           setSuccess("Thank you for subscribing!");
