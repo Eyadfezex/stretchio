@@ -125,6 +125,7 @@ const Hero = () => {
               alt="image-fx"
               width={2000}
               height={2000}
+              priority
               className="absolute w-full h-full object-cover object-top"
             />
           </div>
