@@ -14,7 +14,6 @@ const AboutUs = () => {
               height={5000}
               className="absolute w-full h-full object-cover"
               priority
-              loading="lazy"
             />
           </div>
           <div className="lg:w-[80%] lg:max-w-[400px]">

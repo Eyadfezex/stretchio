@@ -106,7 +106,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
               </span>
               <div className="flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal">
+                  <span className="text-sm leading-[1.6] font-semibold">
                     {item.name}
                   </span>
                 </span>

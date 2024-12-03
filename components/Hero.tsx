@@ -76,7 +76,7 @@ const Hero = () => {
               <h1 className="text-4xl gradient_text  font-semibold lg:text-6xl">
                 Revolutionize Your Workday Wellness{" "}
               </h1>
-              <p className="leading-4 mt-4 lg:text-lg">
+              <p className="lg:leading-4 mt-4 lg:text-lg">
                 Transform your office routine with Stretchio, the ultimate
                 wellness platform designed for desk workers. Say goodbye to
                 stiffness, burnout, and unproductive days with our smart
