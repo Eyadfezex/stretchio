@@ -19,7 +19,7 @@ const NavBar = () => {
           <Link href="#Features" onClick={() => setToggle(false)}>
             Features
           </Link>
-          <Link href="#about" onCanPlay={() => setToggle(false)}>
+          <Link href="#about" onClick={() => setToggle(false)}>
             About
           </Link>
           <div className="w-full flex justify-center">
@@ -50,7 +50,7 @@ const NavBar = () => {
             Stretchio
           </Link>
           <div className="lg:hidden">
-            <Hamburger onToggle={() => setToggle(!toggle)} />
+            <Hamburger onToggle={() => setToggle(!toggle)} toggled={toggle} />
           </div>
           <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-dark hidden">
             <Link href="#Features">Features</Link>
