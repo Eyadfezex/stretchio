@@ -8,7 +8,7 @@ const AboutUs = () => {
         <div className="flex flex-col lg:flex-row lg:items-center w-full px-4 lg:w-[90%] lg:justify-between gap-4 lg:gap-[4rem] max-w-[1920px]">
           <div className="relative rounded-2xl overflow-hidden w-full h-[350px] lg:max-w-[400px] xl:max-w-[700px] lg:h-[500px]">
             <Image
-              src="https://i.ibb.co/k2JN0Lz/image-2024-11-29-060453746.webp"
+              src="https://i.ibb.co/G56HTpZ/image-2024-12-04-053223752.png"
               alt="About us image"
               width={5000}
               height={5000}
