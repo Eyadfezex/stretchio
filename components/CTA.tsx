@@ -13,7 +13,7 @@ const CTA = () => {
             <span className="text-primary">your office wellness?</span>
           </h2>
           <Link
-            href="#"
+            href="."
             className="w-[120px] flex lg:-top-10 justify-center items-center h-[120px] lg:h-[150px] xl:h-[200px] xl:w-[200px] lg:w-[150px] lg:pt-4 pt-2 pl-2 relative  rounded-full tr_gradient  text-white border border-primary"
           >
             <div className="flex flex-col">

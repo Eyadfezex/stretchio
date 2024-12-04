@@ -3,13 +3,13 @@ import React from "react";
 const Service = () => {
   return (
     <section>
-      <div className="flex justify-center  py-5">
-        <div className="flex flex-col items-center md:items-start px-4 w-full lg:w-[90%] max-w-[1920px] md:w-[95%] gap-4 md:gap-8">
+      <div className="flex justify-center  py-5" id="Features">
+        <div className="flex flex-col items-center md:items-start px-4 w-full lg:w-[90%] max-w-[1920px] md:w-[95%] gap-5 md:gap-8">
           <h2 className="gradient_text font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Why Choose Stretchio
           </h2>
           <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-4">
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto ">
               <h3 className="text-primary font-bold text-lg lg:text-xl xl:text-2xl ">
                 Personalized Stretch Reminders
               </h3>
@@ -19,7 +19,7 @@ const Service = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
               <h3 className="text-primary font-bold text-lg lg:text-2xl ">
                 Guided Office-Friendly Routines
               </h3>
@@ -28,7 +28,7 @@ const Service = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
               <h3 className="text-primary font-bold text-lg lg:text-2xl ">
                 Team Challenges and Leaderboards
               </h3>
@@ -37,7 +37,7 @@ const Service = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
               <h3 className="text-primary font-bold text-lg lg:text-2xl ">
                 Integration with Your Work Calendar
               </h3>
@@ -46,7 +46,7 @@ const Service = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
               <h3 className="text-primary font-bold text-lg lg:text-2xl ">
                 Progress Tracking and Gamification
               </h3>
@@ -56,7 +56,7 @@ const Service = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-5 w-[32%]  min-h-[110px] lg:h-[170px] lg:max-h-auto ">
+            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
               <h3 className="text-primary font-bold text-lg lg:text-2xl ">
                 Improve Posture and Reduce Strain
               </h3>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <section className="relative py-10">
+    <section className="relative py-10" id="about">
       <div className="flex justify-center py-10">
         <div className="flex flex-col lg:flex-row lg:items-center w-full px-4 lg:w-[90%] lg:justify-between gap-4 lg:gap-[4rem] max-w-[1920px]">
           <div className="relative rounded-2xl overflow-hidden w-full h-[350px] lg:max-w-[400px] xl:max-w-[700px] lg:h-[500px]">

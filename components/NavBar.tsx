@@ -16,9 +16,8 @@ const NavBar = () => {
         className="absolute p-4 bg-white top-[5.5rem] z-10 lg:hidden"
       >
         <div className="flex flex-col gap-5 ">
-          <Link href="#">Contacts</Link>
-          <Link href="#">Features</Link>
-          <Link href="#">About</Link>
+          <Link href="#Features">Features</Link>
+          <Link href="#about">About</Link>
           <div className="w-full flex justify-center">
             <motion.div
               initial={{ x: -250 }}
@@ -50,9 +49,8 @@ const NavBar = () => {
             <Hamburger onToggle={() => setToggle(!toggle)} />
           </div>
           <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-dark hidden">
-            <Link href="#">Contacts</Link>
-            <Link href="#">Features</Link>
-            <Link href="#">About</Link>
+            <Link href="#Features">Features</Link>
+            <Link href="#about">About</Link>
           </div>
         </div>
       </nav>
