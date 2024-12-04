@@ -16,8 +16,12 @@ const NavBar = () => {
         className="absolute p-4 bg-white top-[5.5rem] z-10 lg:hidden"
       >
         <div className="flex flex-col gap-5 ">
-          <Link href="#Features">Features</Link>
-          <Link href="#about">About</Link>
+          <Link href="#Features" onClick={() => setToggle(false)}>
+            Features
+          </Link>
+          <Link href="#about" onCanPlay={() => setToggle(false)}>
+            About
+          </Link>
           <div className="w-full flex justify-center">
             <motion.div
               initial={{ x: -250 }}
