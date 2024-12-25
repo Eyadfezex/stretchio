@@ -2,8 +2,6 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
-  const date = new Date();
-  const year = date.getFullYear();
   const sections = [
     {
       title: "Home",

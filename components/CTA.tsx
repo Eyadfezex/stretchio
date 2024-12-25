@@ -2,8 +2,10 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Reveal from "./ui/Reveal";
+import img from "@/public/imgs/mockup.png";
+import Image from "next/image";
 const CTA = () => {
   const container = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -20,7 +22,7 @@ const CTA = () => {
   );
 };
 
-const Section1 = ({ scrollYProgress }: { scrollYProgress: any }) => {
+const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   return (
     <motion.div
@@ -34,8 +36,10 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: any }) => {
         <div className="max-w-[450px] lg:max-w-[600px]">
           <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
-            <img
-              src="https://placehold.co/600x400"
+            <Image
+              width={1000}
+              height={1000}
+              src={img}
               alt="cta"
               className=" absolute w-full h-full object-cover "
             />
@@ -69,8 +73,10 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: any }) => {
         <div className="max-w-[450px] lg:max-w-[600px]">
           <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
-            <img
-              src="https://placehold.co/600x400"
+            <Image
+              width={1000}
+              height={1000}
+              src={img}
               alt="cta"
               className=" absolute w-full h-full object-cover "
             />
@@ -99,8 +105,10 @@ const Section3 = () => {
         <div className="max-w-[450px] lg:max-w-[600px]">
           <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
-            <img
-              src="https://placehold.co/600x400"
+            <Image
+              width={1000}
+              height={1000}
+              src={img}
               alt="cta"
               className=" absolute w-full h-full object-cover "
             />

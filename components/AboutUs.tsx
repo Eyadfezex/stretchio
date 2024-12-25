@@ -28,8 +28,9 @@ const AboutUs = () => {
               <p className="mt-5 lg:text-xl">
                 As own, all own, a the a ago. Myself and that everyone in it
                 walls. Reclined scale, on various of the me what him who I its a
-                might who it scent but first writer's tone she immune person,
-                problem proposal employed the a did his most maybe as and.
+                might who it scent but first writer&apos;s tone she immune
+                person, problem proposal employed the a did his most maybe as
+                and.
               </p>
             </div>
           </div>

@@ -67,7 +67,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
         {duplicatedItems.map((item, i) => (
           <li
             key={i}
-            className="card w-[300px] max-w-full rounded-2xl border-2 divide-y-2 md:w-[450px]"
+            className="card w-[300px] max-w-full rounded-2xl border-[1px] border-default-700 divide-y-2 md:w-[450px]"
           >
             <div className="px-4 py-4 flex flex-col justify-between h-[150px]">
               <span className="leading-[1.6] font-normal">

@@ -2,9 +2,6 @@
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import { cn } from "@nextui-org/theme";
-import element from "@/public/heroElement.svg";
-import Image from "next/image";
-import { IoIosArrowForward } from "react-icons/io";
 import React, { useMemo, useState } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";

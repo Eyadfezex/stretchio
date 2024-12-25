@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
-import { testimonials1, testimonials2, Testimonials3 } from "@/constants";
+import { testimonials1, testimonials2 } from "@/constants";
 import Reveal from "./ui/Reveal";
 
 const Testimonials = () => {
