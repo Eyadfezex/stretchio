@@ -58,7 +58,7 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
     </motion.div>
   );
 };
-const Section2 = ({ scrollYProgress }: { scrollYProgress: any }) => {
+const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
   const opacity = useTransform(scrollYProgress, [0, 1], [2, 0]);
 
   return (
