@@ -102,7 +102,7 @@ const Services: React.FC = () => {
           <h2 className="font-bold text-2xl text-center md:text-3xl lg:text-4xl xl:text-7xl bg-gradient-to-r from-gray-600 to-40% to-white inline-block text-transparent bg-clip-text">
             Complete suite <br /> of features
           </h2>
-          <div className="flex flex-wrap justify-center  gap-6 ">
+          <div className="flex flex-wrap justify-center  gap-6 max-w-7xl ">
             <Service
               icon={
                 <IoStatsChart
