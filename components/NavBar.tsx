@@ -13,7 +13,7 @@ const NavBar = () => {
         initial={{ x: -250 }}
         animate={toggle ? { x: 0 } : { x: -250 }}
         transition={{ type: "tween", ease: "circInOut", duration: 0.5 }}
-        className="absolute p-4 bg-white top-[4rem] z-30 lg:hidden text-black"
+        className="absolute p-4 bg-white top-[4rem] z-50 lg:hidden text-black"
       >
         <div className="flex flex-col gap-6 relative z-30 ">
           <Link href="#Features" onClick={() => setToggle(false)}>
