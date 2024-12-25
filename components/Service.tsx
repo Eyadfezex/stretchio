@@ -111,8 +111,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="Guided Sessions"
+              des="Expert-designed routines to ease tension."
               url="#"
             />
             <Service
@@ -123,8 +123,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="Smart Reminders"
+              des="Timely nudges to stretch and recharge. "
               url="#"
             />
             <Service
@@ -135,8 +135,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="Personalized Plans"
+              des="Tailored to your work style and needs."
               url="#"
             />
             <Service
@@ -147,8 +147,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="Boost Productivity"
+              des="Stay focused, energized, and at your best"
               url="#"
             />
             <Service
@@ -159,8 +159,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="Team Wellness"
+              des="Build healthy habits together and celebrate shared success"
               url="#"
             />
             <Service
@@ -171,8 +171,8 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Intuitive Analytics"
-              des="Navigate complex data with user-friendly dashboards"
+              header="peak Performance"
+              des="Boost focus, energy, and productivity throughout your day"
               url="#"
             />
           </div>

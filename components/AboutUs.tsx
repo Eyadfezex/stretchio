@@ -26,11 +26,12 @@ const AboutUs = () => {
                 About Us
               </h3>
               <p className="mt-5 lg:text-xl">
-                As own, all own, a the a ago. Myself and that everyone in it
-                walls. Reclined scale, on various of the me what him who I its a
-                might who it scent but first writer&apos;s tone she immune
-                person, problem proposal employed the a did his most maybe as
-                and.
+                Stretchio is designed to transform your office routine into a
+                healthier and more dynamic experience. Our platform ensures you
+                stay active throughout the day with tailored stretch reminders,
+                guided exercises, and personalized wellness plans. We believe in
+                empowering professionals to prioritize their health without
+                compromising productivity.
               </p>
             </div>
           </div>

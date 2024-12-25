@@ -45,8 +45,8 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
             />
           </div>
           <p className="text-lg  text-default-400 font-semibold mt-4 lg:text-xl max-w-md">
-            Purchase Vertex and get a head start with ready-made layouts and
-            thoughtful pages designed for SaaS and AI ventures.
+            Join Stretchio and improve your day with simple, guided stretches
+            designed to keep you energized and healthy at work.
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
@@ -82,8 +82,8 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
             />
           </div>
           <p className="text-lg  text-default-400 font-semibold mt-4 lg:text-xl max-w-md">
-            Purchase Vertex and get a head start with ready-made layouts and
-            thoughtful pages designed for SaaS and AI ventures.
+            Follow our tailored stretching guides to combat fatigue and boost
+            your productivity, all while sitting at your desk.
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
@@ -117,8 +117,8 @@ const Section3 = () => {
             className="text-lg  text-black font-semibold mt-4 lg:text-xl 
 max-w-md"
           >
-            Purchase Vertex and get a head start with ready-made layouts and
-            thoughtful pages designed for SaaS and AI ventures.
+            Discover the benefits of regular stretching with Stretchio better
+            posture, reduced stress, and a healthier lifestyle.
           </p>
           <Link href="#">
             <Button className="bg-primary text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">

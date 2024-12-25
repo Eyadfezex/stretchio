@@ -77,7 +77,8 @@ const Hero = () => {
               Revolutionize Your <br /> Workday Wellness
             </h1>
             <span className="bg-gradient-to-r lg:mt-7 text-lg md:text-xl  xl:text-3xl font-light opacity-70   from-white from-20%  to-primary inline-block text-transparent bg-clip-text">
-              Revolutionize Your Workday Wellness
+              Say goodbye to stiffness and burnout. Transform your workday with
+              Stretchio -- the ultimate wellness platform designed for workers
             </span>
           </div>
 

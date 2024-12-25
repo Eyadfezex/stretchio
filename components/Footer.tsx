@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   const sections = [
     {
       title: "Home",
@@ -32,10 +33,12 @@ const Footer = () => {
       <div className="flex justify-center">
         <div className="flex flex-col w-full p-4 gap-[6rem] lg:w-[90%] max-w-[1920px] md:w-[95%]">
           <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:pt-[3rem] lg:px-[2rem]">
-            <p className="text-xl">
-              Shape and elevate your online presence. <br /> Built in Framer by
-              Mateus Rila.
-            </p>
+            <div>
+              <span>Stretchio &copy; {year}</span>
+              <p className="text-xl">
+                Empowering desk working to thrive, one stretch at a time
+              </p>
+            </div>
             <div className="flex gap-10">
               <div className="flex flex-col gap-5">
                 {sections.map((section, i) => (
