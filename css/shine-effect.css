@@ -1,0 +1,41 @@
+/* ShineEffect.css */
+.shine-effect {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.shine-effect::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.5) 70%
+  );
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.shine-effect:hover::before {
+  top: -150%;
+  left: 150%;
+  transition: all 0.6s ease;
+}
+
+.shine-effect:hover {
+  transform: scale(1.05);
+}

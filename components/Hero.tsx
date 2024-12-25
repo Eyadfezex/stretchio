@@ -7,6 +7,7 @@ import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
 import React, { useMemo, useState } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -16,15 +17,18 @@ const Hero = () => {
 
   const validateEmail = (email: string) =>
     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+
   const handleEmailChange = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setEmail(e.target.value);
   };
+
   const isEmailInvalid = useMemo(() => {
     if (email === "") return false; // Skip validation for empty input
     return !validateEmail(email);
   }, [email]);
+
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
@@ -64,72 +68,64 @@ const Hero = () => {
 
   return (
     <section className="relative">
-      <Image
-        src={element}
-        alt="shape"
-        className="absolute top-[10%] md:-left-4 w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]"
-      />
-      <div className="flex justify-center relative pt-10">
-        <div className="flex flex-col md:flex-row gap-5 items-center lg:justify-between md:items-start lg:items-center w-full px-4 md:w-[95%] lg:w-[90%] max-w-[1920px]">
-          <div className="flex flex-col gap-7 md:w-[80%] lg:max-w-[500px]">
-            <div>
-              <h1 className="text-4xl gradient_text  font-semibold lg:text-6xl">
-                Revolutionize Your Workday Wellness{" "}
-              </h1>
-              <p className=" mt-4 lg:text-lg">
-                Transform your office routine with Stretchio, the ultimate
-                wellness platform designed for desk workers. Say goodbye to
-                stiffness, burnout, and unproductive days with our smart
-                reminders, guided stretches, and personalized wellness routines.
-              </p>
-            </div>
-            <div>
-              <h2 className="font-semibold">
-                Sign up to get notified when we launch
-              </h2>
-              <form onSubmit={handleSubmit}>
-                <Input
-                  className="mt-2"
-                  placeholder="Enter your email"
-                  color={isEmailInvalid ? "danger" : "default"}
-                  value={email}
-                  isInvalid={isEmailInvalid}
-                  onChange={handleEmailChange}
-                  classNames={{
-                    inputWrapper: cn("bg-white border py-5"),
-                  }}
-                />
-                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-                {success && (
-                  <p className="text-green-500 text-sm mt-2">{success}</p>
-                )}
-                <Button
-                  type="submit"
-                  color="primary"
-                  className="w-full mt-3 items-center flex"
-                  disabled={loading || isEmailInvalid}
-                >
-                  {loading ? (
-                    <span className="text-white">Loading...</span>
-                  ) : (
-                    <span className="text-white">Notify me</span>
-                  )}
-                  <IoIosArrowForward />
-                </Button>
-              </form>
-            </div>
+      <div className="flex justify-center py-[4.5rem] lg:py-[6rem]">
+        <motion.div
+          animate={{ scale: 1, y: 0, opacity: 1 }}
+          initial={{ scale: 0.9, y: 10, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-8 md:gap-10 px-4 md:px-6 w-full lg:w-[80%] max-w-[1920px]"
+        >
+          <div className="flex flex-col items-center gap-5 text-center w-full z-30 relative">
+            <h1 className="bg-gradient-to-br  z-30 text-[10vw] lg:text-7xl leading-[10vw] md:leading-[5.5rem]  xl:text-8xl font-bold  from-white from-35%  to-primary inline-block text-transparent bg-clip-text  xl:leading-[6.7rem]">
+              Revolutionize Your <br /> Workday Wellness
+            </h1>
+            <span className="bg-gradient-to-r lg:mt-7 text-lg md:text-xl  xl:text-3xl font-light opacity-70   from-white from-20%  to-primary inline-block text-transparent bg-clip-text">
+              Revolutionize Your Workday Wellness
+            </span>
           </div>
-          <div className="relative w-full h-[20rem] xl:h-[40rem] md:h-full rounded-2xl overflow-hidden lg:h-[35rem] xl:max-w-[700px] lg:max-w-[500px]">
-            <Image
-              src="https://i.ibb.co/1LjWXkv/image-2024-11-28-062619874.webp"
-              alt="image-fx"
-              width={2000}
-              height={2000}
-              priority
-              className="absolute w-full h-full object-cover object-top"
+
+          {/* Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="relative z-30 flex justify-center max-w-xs lg:max-w-xl w-full items-center gap-2"
+          >
+            <Input
+              placeholder="example@email.com"
+              value={email}
+              onChange={handleEmailChange}
+              className="max-w-[400px]"
+              classNames={{
+                inputWrapper: cn(
+                  "!bg-primary !bg-opacity-30",
+                  "border-2 md:py-6 md:px-5 border-primary rounded-full",
+                  isEmailInvalid && "border-red-500" // Highlight invalid input
+                ),
+                input: cn("!text-white md:text-lg"),
+              }}
             />
-          </div>
-        </div>
+            <Button
+              type="submit" // Button will now trigger the form submit
+              disabled={loading || isEmailInvalid} // Disable button if loading or invalid email
+              className="text-white px-6 lg:px-8 lg:text-base rounded-full bg-primary bg-opacity-60 border-2 md:h-full  border-primary"
+            >
+              {loading ? "Submitting..." : "Notify me"}
+            </Button>
+          </form>
+
+          {/* Error and Success Messages */}
+          {error && <p className="text-red-500">{error}</p>}
+          {success && <p className="text-green-500">{success}</p>}
+
+          {/* Image */}
+          <motion.img
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            initial={{ y: 10, opacity: 0, scale: 0.9 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: "easeInOut" }}
+            className="relative z-30 mt-10"
+            src="https://framerusercontent.com/images/FANTTGJ7A0DLz9sVx80LbdObvg.png?scale-down-to=2048"
+            alt="train"
+          />
+        </motion.div>
       </div>
     </section>
   );

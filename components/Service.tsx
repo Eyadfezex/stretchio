@@ -1,70 +1,180 @@
-import React from "react";
+"use client";
+import "@/css/shine-effect.css";
+import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
+import React, { useState } from "react";
+import { IoStatsChart } from "react-icons/io5";
+import Reveal from "./ui/Reveal";
 
-const Service = () => {
+interface SwipeShineEffectProps {
+  children: React.ReactNode;
+  className?: string;
+  shineColor?: string;
+  shineDuration?: number;
+}
+
+const SwipeShineEffect: React.FC<SwipeShineEffectProps> = ({
+  children,
+  className = "",
+  shineColor = "rgba(255,255,255,0.25)",
+  shineDuration = 0.8,
+}) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+  const controls = useAnimation();
+
+  const handleHoverStart = async () => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      await controls.start({ x: "100%" });
+      setIsAnimating(false);
+      controls.set({ x: "-100%" });
+    }
+  };
+
+  return (
+    <motion.div
+      className={`relative inline-block p-5 text-base text-white  rounded-lg overflow-hidden ${className}`}
+      onHoverStart={handleHoverStart}
+      transition={{ duration: 0.2 }}
+      role="button"
+      aria-label="Swipe Shine Effect"
+    >
+      <motion.div
+        className="absolute inset-0 bg-opacity-20"
+        initial={{ x: "-100%" }}
+        animate={controls}
+        transition={{
+          duration: shineDuration,
+          ease: "easeIn",
+        }}
+        style={{
+          background: `linear-gradient(90deg, transparent 0%, ${shineColor} 50%, transparent 100%)`,
+          width: "200%",
+          zIndex: 1,
+        }}
+      />
+      <motion.div
+        className="relative z-10 bg-opacity-20"
+        whileHover={{
+          textShadow: "0 0 8px rgba(255,255,255,0.8)",
+        }}
+        transition={{ duration: 0.2 }}
+      >
+        {children}
+      </motion.div>
+    </motion.div>
+  );
+};
+
+interface ServiceProps {
+  header: string;
+  des: string;
+  url: string;
+  icon?: React.ReactNode;
+}
+
+const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
+  return (
+    <div className="border border-default-800 rounded-2xl max-h-[270px] max-w-[340px] group overflow-hidden">
+      <SwipeShineEffect>
+        <div className="p-3 rounded-lg border border-default-600 bg-default-800 w-fit">
+          {icon}
+        </div>
+        <h3 className="text-2xl font-bold mt-8">{header}</h3>
+        <p className="mt-4 text-default-400 text-lg">{des}</p>
+        <Link
+          href={url}
+          className="mt-5 block group-hover:text-primary duration-300"
+          aria-label={`Learn more about ${header}`}
+        >
+          Learn more
+        </Link>
+      </SwipeShineEffect>
+    </div>
+  );
+};
+
+const Services: React.FC = () => {
   return (
     <section>
-      <div className="flex justify-center  py-5" id="Features">
-        <div className="flex flex-col items-center md:items-start px-4 w-full lg:w-[90%] max-w-[1920px] md:w-[95%] gap-5 md:gap-8">
-          <h2 className="gradient_text font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-            Why Choose Stretchio
+      <div className="flex justify-center py-[5rem]" id="Features">
+        <div className="flex flex-col items-center px-4 w-full lg:w-[90%] max-w-[1920px] md:w-[95%] gap-5 md:gap-[4rem]">
+          <h2 className="font-bold text-2xl text-center md:text-3xl lg:text-4xl xl:text-7xl bg-gradient-to-r from-gray-600 to-40% to-white inline-block text-transparent bg-clip-text">
+            Complete suite <br /> of features
           </h2>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-4">
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto ">
-              <h3 className="text-primary font-bold text-lg lg:text-xl xl:text-2xl ">
-                Personalized Stretch Reminders
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Get timely reminders tailored to your work schedule and
-                preferences
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
-              <h3 className="text-primary font-bold text-lg lg:text-2xl ">
-                Guided Office-Friendly Routines
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Follow easy-to-do stretches and exercises right at your desk
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
-              <h3 className="text-primary font-bold text-lg lg:text-2xl ">
-                Team Challenges and Leaderboards
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Engage in friendly competition and boost team morale
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
-              <h3 className="text-primary font-bold text-lg lg:text-2xl ">
-                Integration with Your Work Calendar
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Seamlessly fit wellness into your busy work schedule
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
-              <h3 className="text-primary font-bold text-lg lg:text-2xl ">
-                Progress Tracking and Gamification
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Stay motivated with fun challenges and track your wellness
-                journey
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg max-w-[350px] lg:max-w-full p-5 lg:w-[32%]  min-h-[130px] lg:h-[190px] lg:max-h-auto  ">
-              <h3 className="text-primary font-bold text-lg lg:text-2xl ">
-                Improve Posture and Reduce Strain
-              </h3>
-              <p className="lg:text-lg text-gray-500 mt-1 lg:mt-2">
-                Learn techniques to maintain good posture and prevent repetitive
-                strain injuries
-              </p>
-            </div>
+          <div className="flex flex-wrap justify-center  gap-6 ">
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Intuitive Analytics"
+              des="Navigate complex data with user-friendly dashboards"
+              url="#"
+            />
           </div>
         </div>
       </div>
@@ -72,4 +182,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Reveal(Services);

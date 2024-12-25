@@ -4,60 +4,68 @@ import React from "react";
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
-  const links = [
+  const sections = [
     {
-      title: "COMPANY",
-      items: [
-        { label: "How it works", href: "#" },
-        { label: "Pricing", href: "#" },
-        { label: "Demo", href: "#" },
-      ],
+      title: "Home",
+      link: ".",
     },
     {
-      title: "RESOURCES",
-      items: [
-        { label: "Blog post name goes here", href: "#" },
-        { label: "Blog post name goes here", href: "#" },
-        { label: "Blog post name goes here", href: "#" },
-        { label: "See all resources", href: "#" },
-      ],
+      title: "Features",
+      link: ".",
     },
     {
-      title: "ABOUT",
-      items: [
-        { label: "Terms & Conditions", href: "#" },
-        { label: "Privacy Policy", href: "#" },
-      ],
+      title: "Contact",
+      link: ".",
+    },
+  ];
+  const social = [
+    {
+      title: "Facebook",
+      link: "https://www.facebook.com",
+    },
+    {
+      title: "Twitter",
+      link: "https://www.twitter.com",
     },
   ];
 
   return (
-    <footer className="bg-secondary">
+    <footer className="bg-primary ">
       <div className="flex justify-center">
-        <div className="flex flex-col w-full p-4 gap-10 lg:w-[90%] max-w-[1920px] md:w-[95%]">
-          <div className="flex flex-col md:flex-row justify-between gap-5 md:gap-10 lg:py-[5rem] lg:px-[2rem]">
-            <Link
-              href="#"
-              className="text-2xl lg:text-4xl text-primary font-bold font-poppins"
-            >
-              Stretchio
-            </Link>
-            <div className="flex flex-wrap gap-5 md:gap-x-[5rem] xl:gap-[8rem] justify-between">
-              {links.map((link, index) => (
-                <div key={index} className="flex flex-col">
-                  <h4 className="font-bold uppercase">{link.title}</h4>
-                  {link.items.map((item, index) => (
-                    <Link key={index} href={item.href}>
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
+        <div className="flex flex-col w-full p-4 gap-[6rem] lg:w-[90%] max-w-[1920px] md:w-[95%]">
+          <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:pt-[3rem] lg:px-[2rem]">
+            <p className="text-xl">
+              Shape and elevate your online presence. <br /> Built in Framer by
+              Mateus Rila.
+            </p>
+            <div className="flex gap-10">
+              <div className="flex flex-col gap-5">
+                {sections.map((section, i) => (
+                  <Link
+                    key={i}
+                    href={section.link}
+                    className="text-xl hover:underline"
+                  >
+                    {section.title}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-col gap-5">
+                {social.map((section, i) => (
+                  <Link
+                    key={i}
+                    href={section.link}
+                    className="text-xl hover:underline"
+                  >
+                    {section.title}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-          <span className="w-full text-center text-sm">
-            Copyright {year} Stretchio
-          </span>
+          <p className="text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black from-5%  to-primary inline-block text-transparent bg-clip-text">
+            Stretchio
+          </p>
         </div>
       </div>
     </footer>

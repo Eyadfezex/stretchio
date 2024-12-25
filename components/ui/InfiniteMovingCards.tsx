@@ -1,17 +1,17 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { FaQuoteLeft } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
+
+type Direction = "left" | "right";
+type Speed = "fast" | "normal" | "slow";
 
 interface InfiniteMovingCardsProps {
-  items: {
-    quote: string;
-    name: string;
-  }[];
-  direction?: "left" | "right";
-  speed?: "fast" | "normal" | "slow";
+  items: { quote: string; name: string }[];
+  direction?: Direction;
+  speed?: Speed;
   pauseOnHover?: boolean;
+  maxWords?: number; // New prop to limit words
   className?: string;
 }
 
@@ -20,96 +20,61 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
+  maxWords = 20, // Default max words
   className,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollerRef = useRef<HTMLUListElement>(null);
-  const [start, setStart] = useState(false);
+
+  // Utility function to limit words
+  const limitWords = (text: string, maxWords: number): string => {
+    const words = text.split(" ");
+    return words.length > maxWords
+      ? words.slice(0, maxWords).join(" ") + "..."
+      : text;
+  };
 
   useEffect(() => {
-    addAnimation();
-    return cleanupAnimation; // Cleanup on unmount
-  }, []);
-
-  const addAnimation = () => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        scrollerRef.current?.appendChild(duplicatedItem);
-      });
-      applyDirection();
-      applySpeed();
-      setStart(true);
-    }
-  };
-
-  const cleanupAnimation = () => {
-    if (scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      const originalLength = items.length;
-      // Remove duplicate elements
-      scrollerContent.slice(originalLength).forEach((item) => item.remove());
-    }
-  };
-
-  const applyDirection = () => {
-    if (containerRef.current) {
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
-    }
-  };
-
-  const applySpeed = () => {
     if (containerRef.current) {
       const duration =
         speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
       containerRef.current.style.setProperty("--animation-duration", duration);
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "normal" : "reverse"
+      );
     }
-  };
+  }, [direction, speed]);
+
+  const duplicatedItems = [...items, ...items];
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl xl:max-w-[1920px] overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-screen-2xl overflow-hidden",
+        "[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
       <ul
-        ref={scrollerRef}
+        role="list"
+        aria-label="Quotes scrolling list"
         className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll",
+          "flex min-w-full gap-4 py-4 w-max animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, i) => (
+        {duplicatedItems.map((item, i) => (
           <li
-            className="w-[300px] max-w-full relative rounded-2xl border-2 divide divide-y-2 md:w-[450px] max-h-[300px]"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
-            }}
             key={i}
+            className="card w-[300px] max-w-full rounded-2xl border-2 divide-y-2 md:w-[450px]"
           >
-            <div className="flex gap-2 items-center px-5 py-4">
-              <FaQuoteLeft />
-              <span className="font-bold text-lg">Customer Quote</span>
-            </div>
-
-            <div className="px-4 py-4 flex flex-col justify-between h-[150px] min-h-[200px]">
-              <span className="  text-sm leading-[1.6] font-normal">
-                {item.quote}
+            <div className="px-4 py-4 flex flex-col justify-between h-[150px]">
+              <span className="leading-[1.6] font-normal">
+                {limitWords(item.quote, maxWords)}
               </span>
               <div className="flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-semibold">
-                    {item.name}
-                  </span>
-                </span>
+                <span className="leading-[1.6] font-semibold">{item.name}</span>
               </div>
             </div>
           </li>

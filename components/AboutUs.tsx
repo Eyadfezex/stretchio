@@ -1,33 +1,37 @@
+"use client";
 import React from "react";
+import mockUp from "@/public/imgs/mockup.png";
 import Image from "next/image";
-
+import Reveal from "./ui/Reveal";
 const AboutUs = () => {
   return (
-    <section className="relative py-10" id="about">
+    <section>
       <div className="flex justify-center py-10">
-        <div className="flex flex-col lg:flex-row lg:items-center w-full px-4 lg:w-[90%] lg:justify-between gap-4 lg:gap-[4rem] max-w-[1920px]">
-          <div className="relative rounded-2xl overflow-hidden w-full h-[350px] lg:max-w-[400px] xl:max-w-[700px] lg:h-[500px]">
-            <Image
-              src="https://i.ibb.co/G56HTpZ/image-2024-12-04-053223752.png"
-              alt="About us image"
-              width={5000}
-              height={5000}
-              className="absolute w-full h-full object-cover"
-              priority
-            />
-          </div>
-          <div className="lg:w-[80%] lg:max-w-[400px]">
-            <h2 className="gradient_text font-bold text-2xl md:text-3xl mb-4 lg:text-4xl">
-              About us
-            </h2>
-            <p className="text-lg md:text-xl lg:text-lg xl:text-xl">
-              Stretchio is more than an app; it&apos;s a lifestyle designed for
-              busy professionals. Our mission is to integrate wellness
-              seamlessly into your workday, ensuring happier, healthier, and
-              more productive teams. Whether you&apos;re at a desk all day or
-              managing a hybrid schedule, Stretchio provides the tools you need
-              to stay active, focused, and pain-free.
-            </p>
+        <div className="flex flex-col gap-[8rem] px-6 w-full lg:w-[80%] max-w-[1920px]">
+          <h2 className="text-4xl lg:text-7xl font-bold bg-gradient-to-br from-white from-30% to-default-600 inline-block text-transparent bg-clip-text">
+            The all-in-one solution
+          </h2>
+          <div className="flex items-center  gap-10 ">
+            <div className="relative hidden h-[25rem] xl:h-[30rem] lg:w-[80%] xl:w-[40%] rounded-xl overflow-hidden lg:block">
+              <Image
+                src={mockUp}
+                alt="mockup"
+                width={1000}
+                height={1000}
+                className="absolute w-full h-full object-cover"
+              />
+            </div>
+            <div className="lg:max-w-sm xl:max-w-xl">
+              <h3 className="text-lg lg:text-2xl font-semibold after:absolute after:bg-primary after:w-full w-fit after:h-[1px] after:top-[100%] after:left-0 relative ">
+                About Us
+              </h3>
+              <p className="mt-5 lg:text-xl">
+                As own, all own, a the a ago. Myself and that everyone in it
+                walls. Reclined scale, on various of the me what him who I its a
+                might who it scent but first writer's tone she immune person,
+                problem proposal employed the a did his most maybe as and.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -35,4 +39,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Reveal(AboutUs);

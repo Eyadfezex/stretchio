@@ -10,12 +10,15 @@ const NavBar = () => {
   return (
     <header className="relative">
       <motion.div
-        initial={{ y: -250 }}
-        animate={toggle ? { y: 0 } : { y: -250 }}
+        initial={{ x: -250 }}
+        animate={toggle ? { x: 0 } : { x: -250 }}
         transition={{ type: "tween", ease: "circInOut", duration: 0.5 }}
-        className="absolute p-4 bg-white top-[5.5rem] z-10 lg:hidden"
+        className="absolute p-4 bg-white top-[4rem] z-30 lg:hidden text-black"
       >
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-6 relative z-30 ">
+          <Link href="#Features" onClick={() => setToggle(false)}>
+            Home
+          </Link>
           <Link href="#Features" onClick={() => setToggle(false)}>
             Features
           </Link>
@@ -41,20 +44,31 @@ const NavBar = () => {
           </span>
         </div>
       </motion.div>
-      <nav className="flex justify-center py-5 lg:py-9 relative z-10 bg-background">
-        <div className="flex items-center justify-between px-[16px] w-full md:w-[95%] lg:w-[90%] max-w-[1920px]">
+      <nav className="flex justify-center py-2 lg:py-5 relative z-30   border-b border-gray-700 ">
+        <div className="flex items-center  justify-between px-[16px] w-full md:w-[90%] lg:w-[80%] max-w-[1920px]">
           <Link
             href="#"
-            className="text-2xl lg:text-4xl text-primary font-bold font-poppins"
+            className="text-2xl lg:text-2xl text-primary font-semibold font-poppins relative z-30"
           >
             Stretchio
           </Link>
-          <div className="lg:hidden">
-            <Hamburger onToggle={() => setToggle(!toggle)} toggled={toggle} />
+          <div className="lg:hidden relative z-30">
+            <Hamburger
+              color="gray"
+              onToggle={() => setToggle(!toggle)}
+              toggled={toggle}
+            />
           </div>
-          <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-dark hidden">
-            <Link href="#Features">Features</Link>
-            <Link href="#about">About</Link>
+          <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-white font-semibold  hidden relative z-30">
+            <Link className="hover:text-primary  duration-200" href="#">
+              Home
+            </Link>
+            <Link className="hover:text-primary  duration-200" href="#about">
+              Features
+            </Link>
+            <Link className="hover:text-primary  duration-200" href="#about">
+              Contact
+            </Link>
           </div>
         </div>
       </nav>
