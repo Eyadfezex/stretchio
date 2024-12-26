@@ -111,18 +111,6 @@ const Services: React.FC = () => {
           <div className="flex flex-wrap justify-center  gap-6 max-w-7xl ">
             <Service
               icon={
-                <IoStatsChart
-                  className="text-primary"
-                  size={24}
-                  aria-hidden="true"
-                />
-              }
-              header="Guided Sessions"
-              des="Expert-designed routines to ease tension."
-              url="#"
-            />
-            <Service
-              icon={
                 <IoMdNotifications
                   className="text-primary"
                   size={24}
@@ -143,6 +131,18 @@ const Services: React.FC = () => {
               }
               header="Personalized Plans"
               des="Tailored to your work style and needs."
+              url="#"
+            />
+            <Service
+              icon={
+                <IoStatsChart
+                  className="text-primary"
+                  size={24}
+                  aria-hidden="true"
+                />
+              }
+              header="Guided Sessions"
+              des="Expert-designed routines to ease tension."
               url="#"
             />
             <Service
