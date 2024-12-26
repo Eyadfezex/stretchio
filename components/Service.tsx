@@ -4,7 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoStatsChart } from "react-icons/io5";
+import { IoMdNotifications } from "react-icons/io";
+
 import Reveal from "./ui/Reveal";
+import { MdPerson } from "react-icons/md";
+import { HiRocketLaunch } from "react-icons/hi2";
+import { AiOutlineTeam } from "react-icons/ai";
+import { CgPerformance } from "react-icons/cg";
 
 interface SwipeShineEffectProps {
   children: React.ReactNode;
@@ -117,7 +123,7 @@ const Services: React.FC = () => {
             />
             <Service
               icon={
-                <IoStatsChart
+                <IoMdNotifications
                   className="text-primary"
                   size={24}
                   aria-hidden="true"
@@ -129,7 +135,7 @@ const Services: React.FC = () => {
             />
             <Service
               icon={
-                <IoStatsChart
+                <MdPerson
                   className="text-primary"
                   size={24}
                   aria-hidden="true"
@@ -141,7 +147,7 @@ const Services: React.FC = () => {
             />
             <Service
               icon={
-                <IoStatsChart
+                <HiRocketLaunch
                   className="text-primary"
                   size={24}
                   aria-hidden="true"
@@ -153,7 +159,7 @@ const Services: React.FC = () => {
             />
             <Service
               icon={
-                <IoStatsChart
+                <AiOutlineTeam
                   className="text-primary"
                   size={24}
                   aria-hidden="true"
@@ -165,13 +171,13 @@ const Services: React.FC = () => {
             />
             <Service
               icon={
-                <IoStatsChart
+                <CgPerformance
                   className="text-primary"
                   size={24}
                   aria-hidden="true"
                 />
               }
-              header="peak Performance"
+              header="Peak Performance"
               des="Boost focus, energy, and productivity throughout your day"
               url="#"
             />

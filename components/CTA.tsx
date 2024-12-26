@@ -34,7 +34,9 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           1
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
-          <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
+          <h2 className="text-5xl font-semibold lg:text-7xl">
+            Start Stretching
+          </h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
               width={1000}
@@ -71,7 +73,7 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           2
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
-          <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
+          <h2 className="text-5xl font-semibold lg:text-7xl">Stay Active</h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
               width={1000}
@@ -87,7 +89,7 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
-              Get Started
+              Learn More
             </Button>
           </Link>
         </div>
@@ -103,14 +105,14 @@ const Section3 = () => {
           3
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
-          <h2 className="text-5xl font-semibold lg:text-7xl">Start remixing</h2>
+          <h2 className="text-5xl font-semibold lg:text-7xl">Feel Better</h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
               width={1000}
               height={1000}
               src={img}
               alt="cta"
-              className=" absolute w-full h-full object-cover "
+              className=" absolute w-full h-full object-cover"
             />
           </div>
           <p
@@ -121,8 +123,8 @@ max-w-md"
             posture, reduced stress, and a healthier lifestyle.
           </p>
           <Link href="#">
-            <Button className="bg-primary text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">
-              Get Started
+            <Button className="bg-primary capitalize text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">
+              Join us
             </Button>
           </Link>
         </div>
