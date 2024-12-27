@@ -3,6 +3,20 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Squeeze as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
+import { Button } from "@nextui-org/button";
+import {
+  Dropdown,
+  DropdownMenu,
+  DropdownTrigger,
+  DropdownItem,
+} from "@nextui-org/dropdown";
+
+const getPath = () => {
+  if (typeof window !== "undefined") {
+    return window.location.pathname;
+  }
+  return "/";
+};
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   const date = new Date();
@@ -26,7 +40,7 @@ const NavBar = () => {
             About
           </Link>
           <div className="w-full flex justify-center">
-            <motion.div
+            <motion.a
               initial={{ x: -250 }}
               animate={toggle ? { x: 0 } : { x: -250 }}
               transition={{
@@ -34,10 +48,11 @@ const NavBar = () => {
                 duration: 1.5,
                 delay: 0.3,
               }}
+              href={getPath() === "/ar" ? "/ar" : "/"}
               className=" text-2xl lg:text-4xl text-primary font-bold font-poppins"
             >
               Stretchio
-            </motion.div>
+            </motion.a>
           </div>
           <span className="w-full text-center text-xs">
             Copyright © {year} Sretchio
@@ -47,7 +62,7 @@ const NavBar = () => {
       <nav className="flex justify-center py-2 lg:py-5 relative z-30   border-b border-gray-700 ">
         <div className="flex items-center  justify-between px-[16px] w-full md:w-[90%] lg:w-[80%] max-w-[1920px]">
           <Link
-            href="#"
+            href={getPath() === "/ar" ? "/ar" : "/"}
             className="text-2xl lg:text-2xl text-primary font-semibold font-poppins relative z-30"
           >
             Stretchio
@@ -69,6 +84,21 @@ const NavBar = () => {
             <Link className="hover:text-primary  duration-200" href="#about">
               Contact
             </Link>
+            <Dropdown className="text-black">
+              <DropdownTrigger>
+                <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                  lang
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu>
+                <DropdownItem key="ar" href="/ar">
+                  عربي
+                </DropdownItem>
+                <DropdownItem key="en" href="/">
+                  EN
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
         </div>
       </nav>
