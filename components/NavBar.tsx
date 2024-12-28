@@ -10,7 +10,6 @@ import {
   DropdownTrigger,
   DropdownItem,
 } from "@nextui-org/dropdown";
-import path from "path";
 
 const getPath = () => {
   if (typeof window !== "undefined") {
