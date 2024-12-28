@@ -68,7 +68,7 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
-              {getPath() === "/ar" ? "يلا نبدأ" : "Learn More"}
+              {getPath() === "/ar" ? "أعرف أكتر" : "Learn More"}
             </Button>
           </Link>
         </div>
@@ -146,7 +146,7 @@ max-w-md"
           </p>
           <Link href="#">
             <Button className="bg-primary capitalize text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">
-              {getPath() === "/ar" ? "يلا نبدأ" : "Join Us"}
+              {getPath() === "/ar" ? "يلا نبدأ" : "Get started"}
             </Button>
           </Link>
         </div>
