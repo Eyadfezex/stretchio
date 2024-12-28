@@ -45,7 +45,7 @@ const SwipeShineEffect: React.FC<SwipeShineEffectProps> = ({
 
   return (
     <motion.div
-      className={`relative h-full inline-block p-5 text-base text-white  rounded-lg overflow-hidden ${className}`}
+      className={`relative h-full inline-block p-5 w-full text-base text-white  rounded-lg overflow-hidden ${className}`}
       onHoverStart={handleHoverStart}
       transition={{ duration: 0.2 }}
       role="button"
@@ -66,7 +66,7 @@ const SwipeShineEffect: React.FC<SwipeShineEffectProps> = ({
         }}
       />
       <motion.div
-        className="relative z-10 bg-opacity-20"
+        className="relative z-10 bg-opacity-20 h-full"
         whileHover={{
           textShadow: "0 0 8px rgba(255,255,255,0.8)",
         }}
@@ -87,20 +87,24 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
   return (
-    <div className=" border border-default-800 rounded-2xl max-h-[270px] max-w-[340px] group overflow-hidden">
+    <div className="border border-default-800 rounded-2xl max-h-[270px] min-w-[340px] max-w-[340px] group overflow-hidden">
       <SwipeShineEffect>
-        <div className="p-3 rounded-lg border border-default-600 bg-default-800 w-fit">
-          {icon}
+        <div className="flex flex-col justify-between h-full">
+          <div>
+            <div className="p-3 rounded-lg border border-default-600 bg-default-800 w-fit">
+              {icon}
+            </div>
+            <h3 className="text-2xl font-bold mt-8">{header}</h3>
+            <p className="mt-4 text-default-400 text-lg">{des}</p>
+          </div>
+          <Link
+            href={url}
+            className="mt-5 block group-hover:text-primary duration-300"
+            aria-label={`Learn more about ${header}`}
+          >
+            {getPath() === "/ar" ? "اعرف أكتر" : "Learn more"}
+          </Link>
         </div>
-        <h3 className="text-2xl font-bold mt-8">{header}</h3>
-        <p className="mt-4 text-default-400 text-lg">{des}</p>
-        <Link
-          href={url}
-          className="mt-5 block group-hover:text-primary duration-300"
-          aria-label={`Learn more about ${header}`}
-        >
-          {getPath() === "/ar" ? "اعرف أكتر" : "Learn more"}
-        </Link>
       </SwipeShineEffect>
     </div>
   );

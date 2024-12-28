@@ -15,7 +15,7 @@ const AboutUs = () => {
       <div className="flex justify-center py-10">
         <div className="flex flex-col gap-[8rem] px-6 w-full lg:w-[80%] max-w-[1920px]">
           <h2 className="text-4xl lg:text-7xl font-bold bg-gradient-to-br from-white from-30% to-default-600 inline-block text-transparent bg-clip-text">
-            {getPath() === "/ar" ? "Stretchio - سترينتشيو" : "Stretchio"}
+            {getPath() === "/ar" ? "Stretchio - ستريتشيو" : "Stretchio"}
           </h2>
           <div className="flex items-center  gap-10 ">
             <div className="relative hidden h-[25rem] xl:h-[30rem] lg:w-[80%] xl:w-[40%] rounded-xl overflow-hidden lg:block">
@@ -34,7 +34,7 @@ const AboutUs = () => {
               <p className="mt-5 lg:text-xl">
                 {getPath() === "/ar" ? (
                   <span>
-                    احنا في سترينتشيو فاهمين كويس تعب الشغل المكتبي. عارفين إن
+                    احنا في ستريتشيو فاهمين كويس تعب الشغل المكتبي. عارفين إن
                     وجع الظهر والصداع والإرهاق بيخربوا اليوم. عشان كده عملنا لك
                     تطبيق سهل بيساعدك تحافظ على صحتك وانت شغال. هتلاقي عندنا
                     تمارين سريعة تعملها على المكتب، نصايح تخلصك من التوتر،

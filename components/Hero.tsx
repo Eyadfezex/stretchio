@@ -59,11 +59,17 @@ const Hero = () => {
         () => {
           setLoading(false);
           setEmail(""); // Clear the input
-          setSuccess("Thank you for subscribing!");
+          setSuccess(
+            getPath() === "/ar"
+              ? "شكرا لك على الاشتراك!"
+              : "Thank you for subscribing!"
+          );
         },
         (error) => {
           setLoading(false);
-          setError("Failed to subscribe. Please try again.");
+          setError(
+            getPath() === "/ar" ? "" : "فشل الاشتراك. يرجى المحاولة مرة أخرى."
+          );
           console.error(error.text);
         }
       );
@@ -82,7 +88,7 @@ const Hero = () => {
             <h1 className="bg-gradient-to-br  z-30 text-[10vw] lg:text-7xl leading-[10vw] md:leading-[5.5rem]  xl:text-8xl font-bold  from-white from-35%  to-primary inline-block text-transparent bg-clip-text  xl:leading-[6.7rem]">
               {getPath() === "/ar" ? (
                 <span>
-                  غير حياتك الصحية <br /> في مكتبك و من النهاردة
+                  غيّر حياتك الصحية <br /> في مكتبك و من النهاردة
                 </span>
               ) : (
                 <span>
@@ -93,7 +99,7 @@ const Hero = () => {
             <span className="bg-gradient-to-r lg:mt-7 text-lg md:text-xl  xl:text-3xl font-light opacity-70   from-white from-20%  to-primary inline-block text-transparent bg-clip-text">
               {getPath() === "/ar" ? (
                 <span>
-                  كفاية وجع ظهر وتعب! مع سترينتشيو، هتعرف تحافظ على صحتك وانت
+                  كفاية وجع ظهر وتعب! مع ستريتشيو، هتعرف تحافظ على صحتك وانت
                   شغال - تمارين سهلة وسريعة تعملها وانت في مكانك.
                 </span>
               ) : (
@@ -131,10 +137,12 @@ const Hero = () => {
               className="text-white px-6 lg:px-8 lg:text-base rounded-full bg-primary bg-opacity-60 border-2 md:h-full  border-primary"
             >
               {loading
-                ? "Submitting..."
+                ? getPath() === "/ar"
+                  ? "تقديم..."
+                  : "Submitting..."
                 : getPath() === "/ar"
                 ? "ابعتلي لما تنزل"
-                : "Subscribe"}
+                : "Notify me"}
             </Button>
           </form>
 

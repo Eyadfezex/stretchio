@@ -24,25 +24,34 @@ const NavBar = () => {
   return (
     <header className="relative">
       <motion.div
-        initial={{ x: -250 }}
-        animate={toggle ? { x: 0 } : { x: -250 }}
+        initial={getPath() === "/ar" ? { x: 250 } : { x: -250 }}
+        animate={
+          toggle ? { x: 0 } : getPath() === "/ar" ? { x: 250 } : { x: -250 }
+        }
         transition={{ type: "tween", ease: "circInOut", duration: 0.5 }}
         className="absolute p-4 bg-white top-[4rem] z-50 lg:hidden text-black"
       >
-        <div className="flex flex-col gap-6 relative z-30 ">
-          <Link href="#Features" onClick={() => setToggle(false)}>
-            Home
+        <div className="flex flex-col gap-6 relative z-30">
+          <Link className="hover:text-primary  duration-200" href="#">
+            {getPath() === "/ar" ? "الرئيسية" : "Home"}
           </Link>
-          <Link href="#Features" onClick={() => setToggle(false)}>
-            Features
+          <Link className="hover:text-primary  duration-200" href="#about">
+            {getPath() === "/ar" ? "المميزات" : "Features"}
           </Link>
-          <Link href="#about" onClick={() => setToggle(false)}>
-            About
+          <Link className="hover:text-primary  duration-200" href="#about">
+            {getPath() === "/ar" ? "كلمنا" : "Contact"}
           </Link>
+
           <div className="w-full flex justify-center">
             <motion.a
               initial={{ x: -250 }}
-              animate={toggle ? { x: 0 } : { x: -250 }}
+              animate={
+                toggle
+                  ? { x: 0 }
+                  : getPath() === "/ar"
+                  ? { x: 250 }
+                  : { x: -250 }
+              }
               transition={{
                 ease: "backOut",
                 duration: 1.5,
@@ -59,6 +68,7 @@ const NavBar = () => {
           </span>
         </div>
       </motion.div>
+
       <nav className="flex justify-center py-2 lg:py-5 relative z-30   border-b border-gray-700 ">
         <div className="flex items-center  justify-between px-[16px] w-full md:w-[90%] lg:w-[80%] max-w-[1920px]">
           <Link
@@ -67,19 +77,34 @@ const NavBar = () => {
           >
             Stretchio
           </Link>
-          <div className="lg:hidden relative z-30">
+          <div className="lg:hidden relative z-30 flex flex-row-reverse items-center gap-10">
             <Hamburger
               color="gray"
               onToggle={() => setToggle(!toggle)}
               toggled={toggle}
             />
+            <Dropdown className="text-black">
+              <DropdownTrigger>
+                <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                  {getPath() === "/ar" ? "عربي" : "English"}
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu>
+                <DropdownItem key="ar" href="/ar">
+                  عربي
+                </DropdownItem>
+                <DropdownItem key="en" href="/">
+                  EN
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
           <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-white font-semibold  hidden relative z-30">
             <Link className="hover:text-primary  duration-200" href="#">
               {getPath() === "/ar" ? "الرئيسية" : "Home"}
             </Link>
             <Link className="hover:text-primary  duration-200" href="#about">
-              {getPath() === "/ar" ? "مميزات" : "Features"}
+              {getPath() === "/ar" ? "المميزات" : "Features"}
             </Link>
             <Link className="hover:text-primary  duration-200" href="#about">
               {getPath() === "/ar" ? "كلمنا" : "Contact"}
@@ -87,7 +112,7 @@ const NavBar = () => {
             <Dropdown className="text-black">
               <DropdownTrigger>
                 <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
-                  {getPath() === "/ar" ? "عربي" : "English"}
+                  {getPath() === "/ar" ? "English" : "عربي"}
                 </Button>
               </DropdownTrigger>
               <DropdownMenu>

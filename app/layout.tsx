@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta name="description" content={metadata.description} />
       </head>
       <body
-        className={`bg-background relative text-white ${figtree.className}`}
+        className={`bg-background overflow-x-clip relative text-white ${figtree.className}`}
       >
         <NavGx />
         <NavBar />

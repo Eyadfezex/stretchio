@@ -68,7 +68,7 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
-              {getPath() === "/ar" ? "يلا نبد" : "Learn More"}
+              {getPath() === "/ar" ? "يلا نبدأ" : "Learn More"}
             </Button>
           </Link>
         </div>

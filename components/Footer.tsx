@@ -1,3 +1,10 @@
+import { Button } from "@nextui-org/button";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/dropdown";
 import Link from "next/link";
 import React from "react";
 
@@ -11,15 +18,15 @@ const Footer = () => {
   const year = new Date().getFullYear();
   const sections = [
     {
-      title: "Home",
+      title: getPath() ? "الرئيسية" : "Home",
       link: ".",
     },
     {
-      title: "Features",
+      title: getPath() ? "المميزات" : "Features",
       link: ".",
     },
     {
-      title: "Contact",
+      title: getPath() ? "كلمنا" : "Contact",
       link: ".",
     },
   ];
@@ -41,8 +48,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:pt-[3rem] lg:px-[2rem]">
             <div>
               <span>
-                {" "}
-                {getPath() === "/ar" ? "سترينتشيو" : "Stretchio"}
+                {getPath() === "/ar" ? "ستريتشيو" : "Stretchio"}
                 &copy; {year}
               </span>
               <p className="text-xl">
@@ -52,6 +58,21 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-10">
+              <Dropdown className="text-black">
+                <DropdownTrigger>
+                  <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                    {getPath() === "/ar" ? "English" : "عربي"}
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu>
+                  <DropdownItem key="ar" href="/ar">
+                    عربي
+                  </DropdownItem>
+                  <DropdownItem key="en" href="/">
+                    EN
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
               <div className="flex flex-col gap-5">
                 {sections.map((section, i) => (
                   <Link
@@ -77,9 +98,9 @@ const Footer = () => {
             </div>
           </div>
           <p
-            className={`text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black from-5%  to-primary inline-block text-transparent bg-clip-text`}
+            className={`text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black   to-primary inline-block text-transparent bg-clip-text`}
           >
-            {getPath() === "/ar" ? "سترينتشيو" : "Stretchio"}
+            {getPath() === "/ar" ? "ستريتشيو" : "Stretchio"}
           </p>
         </div>
       </div>
