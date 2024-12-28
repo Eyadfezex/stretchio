@@ -1,6 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
+const getPath = () => {
+  if (typeof window !== "undefined") {
+    return window.location.pathname;
+  }
+  return "/";
+};
 const Footer = () => {
   const year = new Date().getFullYear();
   const sections = [
@@ -34,9 +40,15 @@ const Footer = () => {
         <div className="flex flex-col w-full p-4 gap-[6rem] lg:w-[90%] max-w-[1920px] md:w-[95%]">
           <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:pt-[3rem] lg:px-[2rem]">
             <div>
-              <span>Stretchio &copy; {year}</span>
+              <span>
+                {" "}
+                {getPath() === "/ar" ? "سترينتشيو" : "Stretchio"}
+                &copy; {year}
+              </span>
               <p className="text-xl">
-                Empowering desk working to thrive, one stretch at a time
+                {getPath() === "/ar"
+                  ? "معاك في الشغل خطوة خطوة"
+                  : "Empowering desk working to thrive, one stretch at a time"}
               </p>
             </div>
             <div className="flex gap-10">
@@ -64,8 +76,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p className="text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black from-5%  to-primary inline-block text-transparent bg-clip-text">
-            Stretchio
+          <p
+            className={`text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black from-5%  to-primary inline-block text-transparent bg-clip-text`}
+          >
+            {getPath() === "/ar" ? "سترينتشيو" : "Stretchio"}
           </p>
         </div>
       </div>

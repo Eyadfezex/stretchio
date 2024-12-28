@@ -12,6 +12,12 @@ import { HiRocketLaunch } from "react-icons/hi2";
 import { AiOutlineTeam } from "react-icons/ai";
 import { CgPerformance } from "react-icons/cg";
 
+const getPath = () => {
+  if (typeof window !== "undefined") {
+    return window.location.pathname;
+  }
+  return "/";
+};
 interface SwipeShineEffectProps {
   children: React.ReactNode;
   className?: string;
@@ -39,7 +45,7 @@ const SwipeShineEffect: React.FC<SwipeShineEffectProps> = ({
 
   return (
     <motion.div
-      className={`relative inline-block p-5 text-base text-white  rounded-lg overflow-hidden ${className}`}
+      className={`relative h-full inline-block p-5 text-base text-white  rounded-lg overflow-hidden ${className}`}
       onHoverStart={handleHoverStart}
       transition={{ duration: 0.2 }}
       role="button"
@@ -81,7 +87,7 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
   return (
-    <div className="border border-default-800 rounded-2xl max-h-[270px] max-w-[340px] group overflow-hidden">
+    <div className=" border border-default-800 rounded-2xl max-h-[270px] max-w-[340px] group overflow-hidden">
       <SwipeShineEffect>
         <div className="p-3 rounded-lg border border-default-600 bg-default-800 w-fit">
           {icon}
@@ -93,7 +99,7 @@ const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
           className="mt-5 block group-hover:text-primary duration-300"
           aria-label={`Learn more about ${header}`}
         >
-          Learn more
+          {getPath() === "/ar" ? "اعرف أكتر" : "Learn more"}
         </Link>
       </SwipeShineEffect>
     </div>
@@ -106,7 +112,9 @@ const Services: React.FC = () => {
       <div className="flex justify-center py-[5rem]" id="Features">
         <div className="flex flex-col items-center px-4 w-full lg:w-[90%] max-w-[1920px] md:w-[95%] gap-5 md:gap-[4rem]">
           <h2 className="font-bold text-2xl text-center md:text-3xl lg:text-4xl xl:text-7xl bg-gradient-to-r from-gray-600 to-40% to-white inline-block text-transparent bg-clip-text">
-            Complete suite <br /> of features
+            {getPath() === "/ar"
+              ? "المميزات اللى هتلاقيها عندنا"
+              : "Complete suite of features"}
           </h2>
           <div className="flex flex-wrap justify-center  gap-6 max-w-7xl ">
             <Service
@@ -117,8 +125,12 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Smart Reminders"
-              des="Timely nudges to stretch and recharge. "
+              header={getPath() === "/ar" ? "فكرني اتحرك" : "Smart Reminders"}
+              des={
+                getPath() === "/ar"
+                  ? "تنبيهات في وقتها تفكرك تظبط قعدتك وتتحرك شوية"
+                  : "Timely nudges to stretch and recharge. "
+              }
               url="#"
             />
             <Service
@@ -129,8 +141,14 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Personalized Plans"
-              des="Tailored to your work style and needs."
+              header={
+                getPath() === "/ar" ? "برنامجك الخاص" : "Personalized Plans"
+              }
+              des={
+                getPath() === "/ar"
+                  ? "تمارين مخصصة على حسب تعبك ومواعيد عملك"
+                  : "Tailored to your work style and needs."
+              }
               url="#"
             />
             <Service
@@ -141,8 +159,12 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Guided Sessions"
-              des="Expert-designed routines to ease tension."
+              header={getPath() === "/ar" ? "تمارين سهلة" : "Guided Sessions"}
+              des={
+                getPath() === "/ar"
+                  ? "حركات بسيطة وفعالة تريحك من تعب المكتب"
+                  : "Expert-designed routines to ease tension."
+              }
               url="#"
             />
             <Service
@@ -153,8 +175,12 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Boost Productivity"
-              des="Stay focused, energized, and at your best"
+              header={getPath() === "/ar" ? "تابع تقدمك" : "Boost Productivity"}
+              des={
+                getPath() === "/ar"
+                  ? "شوف إزاي صحتك بتتحسن يوم ورا يوم"
+                  : "Stay focused, energized, and at your best"
+              }
               url="#"
             />
             <Service
@@ -165,8 +191,12 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Team Wellness"
-              des="Build healthy habits together and celebrate shared success"
+              header={getPath() === "/ar" ? "شجع زمايلك" : "Team Wellness"}
+              des={
+                getPath() === "/ar"
+                  ? "اعملوا تمارين مع بعض وحفزوا بعض تفضلوا نشيطين"
+                  : "Build healthy habits together and celebrate shared success"
+              }
               url="#"
             />
             <Service
@@ -177,8 +207,14 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header="Peak Performance"
-              des="Boost focus, energy, and productivity throughout your day"
+              header={
+                getPath() === "/ar" ? "خليك في المود" : "Peak Performance"
+              }
+              des={
+                getPath() === "/ar"
+                  ? "حافظ على طاقتك وتركيزك مع نصايح للأكل والحركة"
+                  : "Boost focus, energy, and productivity throughout your day"
+              }
               url="#"
             />
           </div>

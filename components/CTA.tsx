@@ -6,12 +6,19 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Reveal from "./ui/Reveal";
 import img from "@/public/imgs/mockup.png";
 import Image from "next/image";
+const getPath = () => {
+  if (typeof window !== "undefined") {
+    return window.location.pathname;
+  }
+  return "/";
+};
 const CTA = () => {
   const container = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
+
   useEffect(() => {}, []);
   return (
     <section className="relative" ref={container}>
@@ -35,7 +42,7 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
           <h2 className="text-5xl font-semibold lg:text-7xl">
-            Start Stretching
+            {getPath() === "/ar" ? "أبدء صح" : "Start Stretching"}
           </h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
@@ -47,12 +54,21 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
             />
           </div>
           <p className="text-lg  text-default-400 font-semibold mt-4 lg:text-xl max-w-md">
-            Join Stretchio and improve your day with simple, guided stretches
-            designed to keep you energized and healthy at work.
+            {getPath() === "/ar" ? (
+              <span>
+                خلي مكتبك مكان صحي مع تمارين بسيطة وسريعة تريح وجع الشغل
+                المكتبي. مش محتاج أي معدات خالص.
+              </span>
+            ) : (
+              <span>
+                Join Stretchio and improve your day with simple, guided
+                stretches designed to keep you energized and healthy at work.
+              </span>
+            )}
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
-              Get Started
+              {getPath() === "/ar" ? "يلا نبد" : "Learn More"}
             </Button>
           </Link>
         </div>
@@ -73,7 +89,9 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
           2
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
-          <h2 className="text-5xl font-semibold lg:text-7xl">Stay Active</h2>
+          <h2 className="text-5xl font-semibold lg:text-7xl">
+            {getPath() === "/ar" ? "اتحرك أكتر" : "Stay Active"}
+          </h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
               width={1000}
@@ -84,12 +102,13 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
             />
           </div>
           <p className="text-lg  text-default-400 font-semibold mt-4 lg:text-xl max-w-md">
-            Follow our tailored stretching guides to combat fatigue and boost
-            your productivity, all while sitting at your desk.
+            {getPath() === "/ar"
+              ? "تعبان من كتر القعدة؟ معانا هتعرف تتحرك بسهولة في أي وقت - حتى وانت في ميتنج أو يوم زحمة"
+              : "  Follow our tailored stretching guides to combat fatigue and boost your productivity, all while sitting at your desk."}
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
-              Learn More
+              {getPath() === "/ar" ? "أعرف أكتر" : "Learn More"}
             </Button>
           </Link>
         </div>
@@ -105,7 +124,9 @@ const Section3 = () => {
           3
         </span>
         <div className="max-w-[450px] lg:max-w-[600px]">
-          <h2 className="text-5xl font-semibold lg:text-7xl">Feel Better</h2>
+          <h2 className="text-5xl font-semibold lg:text-7xl">
+            {getPath() === "/ar" ? "عيش أحسن" : "Feel Better"}
+          </h2>
           <div className="relative w-full max-w-[440px] mt-6 h-[290px] rounded-xl overflow-hidden">
             <Image
               width={1000}
@@ -119,12 +140,13 @@ const Section3 = () => {
             className="text-lg  text-black font-semibold mt-4 lg:text-xl 
 max-w-md"
           >
-            Discover the benefits of regular stretching with Stretchio better
-            posture, reduced stress, and a healthier lifestyle.
+            {getPath() === "/ar"
+              ? "هتشوف الفرق بنفسك: قوام مظبوط، راحة من الوجع، أقل توتر، وطاقة طول اليوم"
+              : " Discover the benefits of regular stretching with Stretchio better posture, reduced stress, and a healthier lifestyle."}
           </p>
           <Link href="#">
             <Button className="bg-primary capitalize text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">
-              Join us
+              {getPath() === "/ar" ? "يلا نبدأ" : "Join Us"}
             </Button>
           </Link>
         </div>

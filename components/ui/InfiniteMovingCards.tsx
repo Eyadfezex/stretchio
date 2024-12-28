@@ -50,6 +50,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   return (
     <div
       ref={containerRef}
+      dir="ltr"
       className={cn(
         "scroller relative z-20 max-w-screen-2xl overflow-hidden",
         "[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",

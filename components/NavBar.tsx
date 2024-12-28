@@ -10,6 +10,7 @@ import {
   DropdownTrigger,
   DropdownItem,
 } from "@nextui-org/dropdown";
+import path from "path";
 
 const getPath = () => {
   if (typeof window !== "undefined") {
@@ -76,18 +77,18 @@ const NavBar = () => {
           </div>
           <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-white font-semibold  hidden relative z-30">
             <Link className="hover:text-primary  duration-200" href="#">
-              Home
+              {getPath() === "/ar" ? "الرئيسية" : "Home"}
             </Link>
             <Link className="hover:text-primary  duration-200" href="#about">
-              Features
+              {getPath() === "/ar" ? "مميزات" : "Features"}
             </Link>
             <Link className="hover:text-primary  duration-200" href="#about">
-              Contact
+              {getPath() === "/ar" ? "كلمنا" : "Contact"}
             </Link>
             <Dropdown className="text-black">
               <DropdownTrigger>
                 <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
-                  lang
+                  {getPath() === "/ar" ? "عربي" : "English"}
                 </Button>
               </DropdownTrigger>
               <DropdownMenu>

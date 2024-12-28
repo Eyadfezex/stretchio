@@ -11,6 +11,12 @@ const Hero = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const getPath = () => {
+    if (typeof window !== "undefined") {
+      return window.location.pathname;
+    }
+    return "/";
+  };
 
   const validateEmail = (email: string) =>
     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
@@ -74,11 +80,29 @@ const Hero = () => {
         >
           <div className="flex flex-col items-center gap-5 text-center w-full z-30 relative">
             <h1 className="bg-gradient-to-br  z-30 text-[10vw] lg:text-7xl leading-[10vw] md:leading-[5.5rem]  xl:text-8xl font-bold  from-white from-35%  to-primary inline-block text-transparent bg-clip-text  xl:leading-[6.7rem]">
-              Revolutionize Your <br /> Workday Wellness
+              {getPath() === "/ar" ? (
+                <span>
+                  غير حياتك الصحية <br /> في مكتبك و من النهاردة
+                </span>
+              ) : (
+                <span>
+                  Revolutionize Your <br /> Workday Wellness
+                </span>
+              )}
             </h1>
             <span className="bg-gradient-to-r lg:mt-7 text-lg md:text-xl  xl:text-3xl font-light opacity-70   from-white from-20%  to-primary inline-block text-transparent bg-clip-text">
-              Say goodbye to stiffness and burnout. Transform your workday with
-              Stretchio -- the ultimate wellness platform designed for workers
+              {getPath() === "/ar" ? (
+                <span>
+                  كفاية وجع ظهر وتعب! مع سترينتشيو، هتعرف تحافظ على صحتك وانت
+                  شغال - تمارين سهلة وسريعة تعملها وانت في مكانك.
+                </span>
+              ) : (
+                <span>
+                  Say goodbye to stiffness and burnout. Transform your workday
+                  with Stretchio -- the ultimate wellness platform designed for
+                  workers
+                </span>
+              )}
             </span>
           </div>
 
@@ -106,7 +130,11 @@ const Hero = () => {
               disabled={loading || isEmailInvalid} // Disable button if loading or invalid email
               className="text-white px-6 lg:px-8 lg:text-base rounded-full bg-primary bg-opacity-60 border-2 md:h-full  border-primary"
             >
-              {loading ? "Submitting..." : "Notify me"}
+              {loading
+                ? "Submitting..."
+                : getPath() === "/ar"
+                ? "ابعتلي لما تنزل"
+                : "Subscribe"}
             </Button>
           </form>
 

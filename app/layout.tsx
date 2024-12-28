@@ -1,4 +1,6 @@
+"use client";
 import type { Metadata } from "next";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -7,16 +9,7 @@ import NavGx from "@/components/ui/NavGx";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
-const getPath = () => {
-  if (typeof window !== "undefined") {
-    return window.location.pathname;
-  }
-  return "/";
-};
-
-const path = getPath();
-
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Stretchio-pre-launch",
   description:
     "Transform your office routine with Stretchio, the ultimate wellness platform designed for desk workers. Say goodbye to stiffness, burnout, and unproductive days with our smart reminders, guided stretches, and personalized wellness routines.",
@@ -27,11 +20,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Use usePathname to dynamically get the current path
+  const pathname = usePathname();
+
+  // Determine language and direction
+  const lang = pathname?.startsWith("/ar") ? "ar" : "en";
+  const dir = lang === "ar" ? "rtl" : "ltr";
+
   return (
-    <html
-      lang={path === "/ar" ? "ar" : "en"}
-      dir={path === "/ar" ? "rtl" : "ltr"}
-    >
+    <html lang={lang} dir={dir}>
       <body
         className={`bg-background relative text-white ${figtree.className}`}
       >
