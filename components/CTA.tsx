@@ -82,9 +82,9 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
   return (
     <motion.div
       style={{ opacity }}
-      className="sticky top-0 flex py-[8rem] justify-center max-h-screen border-t border-t-zinc-500 bg-black"
+      className="sticky top-0 flex  py-[8rem] justify-center max-h-screen border-t border-t-zinc-500 bg-black"
     >
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-20  px-4 md:px-6 w-full lg:w-[80%] max-w-[1920px]">
+      <div className="flex flex-col lg:flex-row-reverse lg:justify-between gap-20  px-4 md:px-6 w-full lg:w-[80%] max-w-[1920px]">
         <span className="text-[164px] lg:text-[170px] leading-none font-semibold text-primary">
           2
         </span>
