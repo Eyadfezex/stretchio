@@ -11,6 +11,11 @@ const getPath = () => {
 };
 const Footer = () => {
   const year = new Date().getFullYear();
+  const gradientDirection =
+    getPath() === "/ar"
+      ? "to-black from-primary from-60%"
+      : "from-black to-primary to-60%";
+
   const sections = [
     {
       title: getPath() === "/ar" ? "الرئيسية" : "Home",
@@ -82,7 +87,10 @@ const Footer = () => {
             </div>
           </div>
           <p
-            className={`text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  from-black   to-primary inline-block text-transparent bg-clip-text`}
+            className={`text-[18vw] xl:text-[190px]  font-semibold bg-gradient-to-r  
+             ${gradientDirection}
+             
+              inline-block text-transparent bg-clip-text`}
           >
             {getPath() === "/ar" ? "ستريتشيو" : "Stretchio"}
           </p>
