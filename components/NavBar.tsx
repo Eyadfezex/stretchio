@@ -4,12 +4,6 @@ import React, { useState } from "react";
 import { Squeeze as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import { Button } from "@nextui-org/button";
-import {
-  Dropdown,
-  DropdownMenu,
-  DropdownTrigger,
-  DropdownItem,
-} from "@nextui-org/dropdown";
 
 const getPath = () => {
   if (typeof window !== "undefined") {
