@@ -44,8 +44,8 @@ const AboutUs = () => {
                 ) : (
                   <span>
                     At Stretchio, we understand the daily challenges of office
-                    life. From back pain to mental fatigue, we've designed a
-                    comprehensive wellness platform that fits seamlessly into
+                    life. From back pain to mental fatigue, we&apos;ve designed
+                    a comprehensive wellness platform that fits seamlessly into
                     your workday. Our quick, desk-friendly stretches,
                     stress-relief techniques, and smart nutrition tips help you
                     stay healthy, focused, and comfortable - no matter how long
