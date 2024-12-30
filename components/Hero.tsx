@@ -36,7 +36,11 @@ const Hero = () => {
     e.preventDefault();
 
     if (!email) {
-      setError("Please enter your email address");
+      setError(
+        getPath() === "/ar"
+          ? "من فضلك أدخل بريدك الإلكتروني"
+          : "Please enter your email address"
+      );
       return;
     }
 
