@@ -87,7 +87,7 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
   return (
-    <div className="border border-default-800 rounded-2xl max-h-[270px] min-w-[340px] max-w-[380px] group overflow-hidden">
+    <div className="border border-default-800 rounded-2xl max-h-[270px] min-w-[380px] max-w-[380px] group overflow-hidden">
       <SwipeShineEffect>
         <div className="flex flex-col justify-between h-full">
           <div>
