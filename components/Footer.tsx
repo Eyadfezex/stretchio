@@ -48,8 +48,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:pt-[3rem] lg:px-[2rem]">
             <div>
               <span>
-                {getPath() === "/ar" ? "ستريتشيو" : "Stretchio"}
-                &copy; {year}
+                {getPath() === "/ar" ? "ستريتشيو" : "Stretchio"} &copy; {year}
               </span>
               <p className="text-xl">
                 {getPath() === "/ar"

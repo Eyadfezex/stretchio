@@ -87,7 +87,7 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ header, icon, des, url }) => {
   return (
-    <div className="border border-default-800 rounded-2xl max-h-[270px] min-w-[340px] max-w-[340px] group overflow-hidden">
+    <div className="border border-default-800 rounded-2xl max-h-[270px] min-w-[340px] max-w-[380px] group overflow-hidden">
       <SwipeShineEffect>
         <div className="flex flex-col justify-between h-full">
           <div>
@@ -133,7 +133,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "تنبيهات في وقتها تفكرك تظبط قعدتك وتتحرك شوية"
-                  : "Timely nudges to stretch and recharge. "
+                  : "Gentle notifications to maintain good posture and take movement breaks."
               }
               url="#"
             />
@@ -151,7 +151,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "تمارين مخصصة على حسب تعبك ومواعيد عملك"
-                  : "Tailored to your work style and needs."
+                  : "Customized routines based on your specific pain points and schedule."
               }
               url="#"
             />
@@ -167,7 +167,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "حركات بسيطة وفعالة تريحك من تعب المكتب"
-                  : "Expert-designed routines to ease tension."
+                  : "Quick, effective stretches targeting common office-related tension points."
               }
               url="#"
             />
@@ -179,11 +179,11 @@ const Services: React.FC = () => {
                   aria-hidden="true"
                 />
               }
-              header={getPath() === "/ar" ? "تابع تقدمك" : "Boost Productivity"}
+              header={getPath() === "/ar" ? "تابع تقدمك" : "Progress Analytics"}
               des={
                 getPath() === "/ar"
                   ? "شوف إزاي صحتك بتتحسن يوم ورا يوم"
-                  : "Stay focused, energized, and at your best"
+                  : "Track your wellness journey and see how better movement improves your workday."
               }
               url="#"
             />
@@ -199,7 +199,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "اعملوا تمارين مع بعض وحفزوا بعض تفضلوا نشيطين"
-                  : "Build healthy habits together and celebrate shared success"
+                  : "Build healthy habits together and motivate each other to stay active."
               }
               url="#"
             />
@@ -217,7 +217,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "حافظ على طاقتك وتركيزك مع نصايح للأكل والحركة"
-                  : "Boost focus, energy, and productivity throughout your day"
+                  : "Maintain energy and focus with balanced nutrition and movement tips."
               }
               url="#"
             />
