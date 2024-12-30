@@ -43,12 +43,13 @@ const AboutUs = () => {
                   </span>
                 ) : (
                   <span>
-                    Stretchio is designed to transform your office routine into
-                    a healthier and more dynamic experience. Our platform
-                    ensures you stay active throughout the day with tailored
-                    stretch reminders, guided exercises, and personalized
-                    wellness plans. We believe in empowering professionals to
-                    prioritize their health without compromising productivity.
+                    At Stretchio, we understand the daily challenges of office
+                    life. From back pain to mental fatigue, we've designed a
+                    comprehensive wellness platform that fits seamlessly into
+                    your workday. Our quick, desk-friendly stretches,
+                    stress-relief techniques, and smart nutrition tips help you
+                    stay healthy, focused, and comfortable - no matter how long
+                    your to-do list is
                   </span>
                 )}
               </p>

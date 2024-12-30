@@ -102,9 +102,17 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue }) => {
             />
           </div>
           <p className="text-lg  text-default-400 font-semibold mt-4 lg:text-xl max-w-md">
-            {getPath() === "/ar"
-              ? "تعبان من كتر القعدة؟ معانا هتعرف تتحرك بسهولة في أي وقت - حتى وانت في ميتنج أو يوم زحمة"
-              : "  Follow our tailored stretching guides to combat fatigue and boost your productivity, all while sitting at your desk."}
+            {getPath() === "/ar" ? (
+              <span>
+                تعبان من كتر القعدة؟ معانا هتعرف تتحرك بسهولة في أي وقت - حتى
+                وانت في ميتنج أو يوم زحمة
+              </span>
+            ) : (
+              <span>
+                Follow our tailored stretching guides to combat fatigue and
+                boost your productivity, all while sitting at your desk.
+              </span>
+            )}
           </p>
           <Link href="#">
             <Button className="bg-black text-white mt-3 lg:mt-8  border border-default-500 py-[10px] font-semibold text-lg px-6">
@@ -140,9 +148,17 @@ const Section3 = () => {
             className="text-lg  text-black font-semibold mt-4 lg:text-xl 
 max-w-md"
           >
-            {getPath() === "/ar"
-              ? "هتشوف الفرق بنفسك: قوام مظبوط، راحة من الوجع، أقل توتر، وطاقة طول اليوم"
-              : " Discover the benefits of regular stretching with Stretchio better posture, reduced stress, and a healthier lifestyle."}
+            {getPath() === "/ar" ? (
+              <span>
+                هتشوف الفرق بنفسك: قوام مظبوط، راحة من الوجع، أقل توتر، وطاقة
+                طول اليوم
+              </span>
+            ) : (
+              <span>
+                Discover the benefits of regular stretching with Stretchio
+                better posture, reduced stress, and a healthier lifestyle.
+              </span>
+            )}
           </p>
           <Link href="#">
             <Button className="bg-primary capitalize text-black mt-3 lg:mt-8  border border-black py-[10px] font-semibold text-lg px-6">

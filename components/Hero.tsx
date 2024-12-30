@@ -104,9 +104,9 @@ const Hero = () => {
                 </span>
               ) : (
                 <span>
-                  Say goodbye to stiffness and burnout. Transform your workday
-                  with Stretchio -- the ultimate wellness platform designed for
-                  workers
+                  Say goodbye to back pain and stiff shoulders. Join Stretchio -
+                  your personal wellness guide for a pain-free, energized
+                  workday. Quick, effective stretches right at your desk
                 </span>
               )}
             </span>

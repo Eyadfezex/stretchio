@@ -83,21 +83,11 @@ const NavBar = () => {
               onToggle={() => setToggle(!toggle)}
               toggled={toggle}
             />
-            <Dropdown className="text-black">
-              <DropdownTrigger>
-                <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
-                  {getPath() === "/ar" ? "عربي" : "English"}
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem key="ar" href="/ar">
-                  عربي
-                </DropdownItem>
-                <DropdownItem key="en" href="/">
-                  EN
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            <Link href={getPath() === "/ar" ? "/" : "/ar"}>
+              <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                {getPath() === "/ar" ? "English" : "عربي"}
+              </Button>
+            </Link>
           </div>
           <div className="lg:flex items-center gap-10 xl:gap-[4rem] text-white font-semibold  hidden relative z-30">
             <Link className="hover:text-primary  duration-200" href="#">
@@ -109,21 +99,11 @@ const NavBar = () => {
             <Link className="hover:text-primary  duration-200" href="#about">
               {getPath() === "/ar" ? "كلمنا" : "Contact"}
             </Link>
-            <Dropdown className="text-black">
-              <DropdownTrigger>
-                <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
-                  {getPath() === "/ar" ? "English" : "عربي"}
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem key="ar" href="/ar">
-                  عربي
-                </DropdownItem>
-                <DropdownItem key="en" href="/">
-                  EN
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            <Link href={getPath() === "/ar" ? "/" : "/ar"}>
+              <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                {getPath() === "/ar" ? "English" : "عربي"}
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>

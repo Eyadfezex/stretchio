@@ -18,25 +18,25 @@ const Footer = () => {
   const year = new Date().getFullYear();
   const sections = [
     {
-      title: getPath() ? "الرئيسية" : "Home",
+      title: getPath() === "/ar" ? "الرئيسية" : "Home",
       link: ".",
     },
     {
-      title: getPath() ? "المميزات" : "Features",
+      title: getPath() === "/ar" ? "المميزات" : "Features",
       link: ".",
     },
     {
-      title: getPath() ? "كلمنا" : "Contact",
+      title: getPath() === "/ar" ? "كلمنا" : "Contact",
       link: ".",
     },
   ];
   const social = [
     {
-      title: "Facebook",
+      title: getPath() === "/ar" ? "فيسبوك" : "Facebook",
       link: "https://www.facebook.com",
     },
     {
-      title: "Twitter",
+      title: getPath() === "/ar" ? "تويتر" : "Twitter",
       link: "https://www.twitter.com",
     },
   ];
@@ -57,21 +57,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-10">
-              <Dropdown className="text-black">
-                <DropdownTrigger>
-                  <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
-                    {getPath() === "/ar" ? "English" : "عربي"}
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu>
-                  <DropdownItem key="ar" href="/ar">
-                    عربي
-                  </DropdownItem>
-                  <DropdownItem key="en" href="/">
-                    EN
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+              <Link href={getPath() === "/ar" ? "/" : "/ar"}>
+                <Button className="bg-primary bg-opacity-20 font-bold tracking-wider backdrop-blur-xl border text-white ">
+                  {getPath() === "/ar" ? "English" : "عربي"}
+                </Button>
+              </Link>
               <div className="flex flex-col gap-5">
                 {sections.map((section, i) => (
                   <Link
