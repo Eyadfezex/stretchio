@@ -133,7 +133,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "تنبيهات في وقتها تفكرك تظبط قعدتك وتتحرك شوية"
-                  : "Gentle notifications to maintain good posture and take movement breaks."
+                  : "Gentle notifications to maintain good posture and take movement breaks"
               }
               url="#"
             />
@@ -151,7 +151,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "تمارين مخصصة على حسب تعبك ومواعيد عملك"
-                  : "Customized routines based on your specific pain points and schedule."
+                  : "Customized routines based on your specific pain points and schedule"
               }
               url="#"
             />
@@ -167,7 +167,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "حركات بسيطة وفعالة تريحك من تعب المكتب"
-                  : "Quick, effective stretches targeting common office-related tension points."
+                  : "Quick, effective stretches targeting common office-related tension points"
               }
               url="#"
             />
@@ -183,7 +183,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "شوف إزاي صحتك بتتحسن يوم ورا يوم"
-                  : "Track your wellness journey and see how better movement improves your workday."
+                  : "Track your wellness journey and see how better movement improves your workday"
               }
               url="#"
             />
@@ -199,7 +199,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "اعملوا تمارين مع بعض وحفزوا بعض تفضلوا نشيطين"
-                  : "Build healthy habits together and motivate each other to stay active."
+                  : "Build healthy habits together and motivate each other to stay active"
               }
               url="#"
             />
@@ -217,7 +217,7 @@ const Services: React.FC = () => {
               des={
                 getPath() === "/ar"
                   ? "حافظ على طاقتك وتركيزك مع نصايح للأكل والحركة"
-                  : "Maintain energy and focus with balanced nutrition and movement tips."
+                  : "Maintain energy and focus with balanced nutrition and movement tips"
               }
               url="#"
             />
