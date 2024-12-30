@@ -13,7 +13,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   const gradientDirection =
     getPath() === "/ar"
-      ? "to-black from-primary from-40% lg:from-30% xl:from-50%"
+      ? "to-black from-primary from-20% lg:from-30% xl:from-50%"
       : "from-black to-primary to-90% lg:to-90% xl:to-70%";
 
   const sections = [
