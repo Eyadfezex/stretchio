@@ -12,9 +12,9 @@ const AboutUs = () => {
   };
   return (
     <section>
-      <div className="flex justify-center py-10">
+      <div className="flex justify-center py-10 pb-[5rem]">
         <div className="flex flex-col gap-[8rem] px-6 w-full lg:w-[80%] max-w-[1920px]">
-          <h2 className="text-4xl lg:text-7xl font-bold bg-gradient-to-br from-white from-30% to-default-600 inline-block text-transparent bg-clip-text">
+          <h2 className="text-4xl lg:text-7xl font-bold bg-gradient-to-br from-white leading-relaxed from-30% to-default-600 inline-block text-transparent bg-clip-text">
             {getPath() === "/ar" ? "Stretchio - ستريتشيو" : "Stretchio"}
           </h2>
           <div className="flex items-center  gap-10 ">
